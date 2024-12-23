@@ -1,0 +1,25 @@
+---
+- name: Configure GPU for Solo OS
+  hosts: all
+  become: yes
+  tasks:
+    - name: Add NVIDIA package repositories
+      apt_repository:
+        repo: "deb https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/ /"
+        state: present
+
+    - name: Install NVIDIA drivers
+      apt:
+        name: nvidia-driver-525
+        state: present
+        update_cache: yes
+
+    - name: Install CUDA Toolkit
+      apt:
+        name: cuda-toolkit-11-8
+        state: present
+
+    - name: Install cuDNN
+      # cuDNN installation steps or download from NVIDIA
+      debug:
+        msg: "cuDNN installation needs to be handled manually or via additional scripts."

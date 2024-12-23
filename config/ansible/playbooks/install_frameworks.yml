@@ -1,0 +1,23 @@
+---
+- name: Install ML Frameworks
+  hosts: all
+  become: yes
+  tasks:
+    - name: Install Python and pip
+      apt:
+        name:
+          - python3
+          - python3-pip
+        state: present
+
+    - name: Install TensorFlow
+      pip:
+        name: tensorflow
+        state: latest
+
+    - name: Install PyTorch
+      pip:
+        name: torch torchvision
+        state: latest
+
+    # Add more ML frameworks as needed

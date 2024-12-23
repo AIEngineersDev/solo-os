@@ -1,0 +1,40 @@
+# Compiled files
+*.o
+*.so
+*.exe
+
+# Logs
+logs/
+*.log
+
+# Dependency directories
+node_modules/
+venv/
+env/
+__pycache__/
+
+# IDE settings
+.vscode/
+.idea/
+
+# Build directories
+build/
+dist/
+
+# Secrets
+*.env
+*.secret
+
+# Docker
+**/Dockerfile
+**/Dockerfile.*
+*.dockerignore
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.swp
+
